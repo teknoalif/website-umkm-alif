@@ -12,21 +12,21 @@ export default function Home() {
       id: 1, 
       name: "Nasi Kuning Ayam Palekko", 
       price: "20.000", 
-      desc: "Nasi kuning gurih khas Sulawesi dengan topping ayam Palekko pedas mantap.",
+      desc: "Nasi kuning gurih dengan topping tempe orek, telur puyuh, dan ayam palekko khas sulawesi. dikemas dengan thinwall ukuran 650ml.",
       image: "/naskun.jpg" 
     },
     { 
       id: 2, 
       name: "Tahu Walik & Pangsit Goreng", 
       price: "12.000", 
-      desc: "Camilan renyah isi ayam pilihan, cocok dinikmati dengan sambal pedas.",
+      desc: "Cemilan renyah isi adonan bakso dari daging ayam pilihan, cocok dinikmati dengan sambal pedas.",
       image: "/tahu.jpg" 
     },
     { 
       id: 3, 
       name: "Pancake Durian Mini (2 Pcs)", 
       price: "30.000", 
-      desc: "Durian kupas premium dengan krim lembut dan kulit pancake yang tipis.",
+      desc: "Daging durian asli dengan krim lembut dan kulit pancake yang tipis.",
       image: "/pancakeduren.jpg"
     }
   ];
@@ -42,12 +42,13 @@ export default function Home() {
       <nav className="p-3 bg-white shadow-md flex justify-between items-center sticky top-0 z-50 border-b border-gray-100">
         <div className="flex items-center gap-3">
           {/* Logo Kotak Sesuai Asli */}
-<div className="relative w-14 h-14 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+{/* Update bingkai logo di Navbar agar lebih serasi dengan permintaan istri */}
+<div className="relative w-14 h-14 overflow-hidden rounded-xl border-2 border-gold-uwais shadow-md bg-maroon-uwais">
   <Image 
     src="/logo.jpg" 
     alt="Logo Dapur Mama Uwais" 
     fill 
-    className="object-contain bg-black" // object-contain agar logo tidak terdistorsi
+    className="object-contain" 
   />
 </div>
           <h1 className="text-xl font-black tracking-tighter text-slate-900">DAPUR MAMA UWAIS</h1>
