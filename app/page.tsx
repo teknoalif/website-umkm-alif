@@ -12,7 +12,7 @@ export default function Home() {
       id: 1, 
       name: "Nasi Kuning Ayam Palekko", 
       price: "20.000", 
-      desc: "Nasi kuning gurih dengan topping tempe orek, telur puyuh, dan ayam palekko khas sulawesi. dikemas dengan thinwall ukuran 650ml.",
+      desc: "Nasi kuning gurih dengan topping tempe orek, telur puyuh, dan ayam palekko khas sulawesi. Dikemas dengan thinwall ukuran 650ml.",
       image: "/naskun.jpg" 
     },
     { 
@@ -41,16 +41,15 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="p-3 bg-white shadow-md flex justify-between items-center sticky top-0 z-50 border-b border-gray-100">
         <div className="flex items-center gap-3">
-          {/* Logo Kotak Sesuai Asli */}
-{/* Update bingkai logo di Navbar agar lebih serasi dengan permintaan istri */}
-<div className="relative w-14 h-14 overflow-hidden rounded-xl border-2 border-gold-uwais shadow-md bg-maroon-uwais">
-  <Image 
-    src="/logo.jpg" 
-    alt="Logo Dapur Mama Uwais" 
-    fill 
-    className="object-contain" 
-  />
-</div>
+          {/* Logo Kotak Sesuai Permintaan Istri */}
+          <div className="relative w-14 h-14 overflow-hidden rounded-xl border-2 border-[#FFD700] shadow-md bg-[#800000]">
+            <Image 
+              src="/logo.jpg" 
+              alt="Logo Dapur Mama Uwais" 
+              fill 
+              className="object-contain" 
+            />
+          </div>
           <h1 className="text-xl font-black tracking-tighter text-slate-900">DAPUR MAMA UWAIS</h1>
         </div>
         <a href={`https://wa.me/${phoneWA}`} target="_blank" className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full flex items-center gap-2 text-sm transition-all font-bold shadow-sm">
@@ -58,7 +57,7 @@ export default function Home() {
         </a>
       </nav>
 
-      {/* HERO SECTION - KITA KUNCI WARNA MAROONNYA */}
+      {/* HERO SECTION */}
       <section className="py-24 px-6 text-center bg-[#800000] text-white relative">
         <div className="relative z-10">
           <div className="flex justify-center gap-1 mb-6 text-yellow-400">
@@ -91,7 +90,7 @@ export default function Home() {
         
         <div className="grid md:grid-cols-3 gap-12">
           {menus.map((item) => (
-            <div key={item.id} className="bg-white border border-gray-100 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-[10px] hover:border-b-[#800000]">
+            <div key={item.id} className="bg-white border border-gray-100 rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-[10px] hover:border-b-[#800000] flex flex-col">
               <div className="relative h-80 w-full bg-slate-100 overflow-hidden">
                 <Image 
                   src={item.image} 
@@ -104,13 +103,18 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="p-10 text-center">
-                <h4 className="text-2xl font-extrabold text-slate-900 mb-4 tracking-tight group-hover:text-[#800000] transition-colors">{item.name}</h4>
-                <p className="text-slate-500 text-base mb-10 leading-relaxed italic">"{item.desc}"</p>
+              {/* Bagian teks dan tombol dibuat flex-col agar mb-auto berfungsi */}
+              <div className="p-10 text-center flex flex-col flex-1">
+                <h4 className="text-2xl font-extrabold text-slate-900 mb-4 tracking-tight group-hover:text-[#800000] transition-colors">
+                  {item.name}
+                </h4>
+                <p className="text-slate-500 text-base mb-8 leading-relaxed italic mb-auto">
+                  "{item.desc}"
+                </p>
                 
                 <button 
                   onClick={() => handleOrder(item.name)}
-                  className="w-full bg-slate-900 text-white py-5 rounded-3xl hover:bg-[#800000] transition-all shadow-md flex items-center justify-center gap-3 font-black text-lg group/btn"
+                  className="w-full bg-slate-900 text-white py-5 rounded-3xl hover:bg-[#800000] transition-all shadow-md flex items-center justify-center gap-3 font-black text-lg group/btn mt-4"
                 >
                   <ShoppingCart size={22} className="group-hover/btn:animate-bounce text-yellow-400" />
                   PESAN SEKARANG
@@ -125,16 +129,19 @@ export default function Home() {
       <footer className="bg-slate-950 text-white py-24 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-16">
           <div className="text-center md:text-left">
-            <div className="relative w-28 h-28 mb-8 mx-auto md:mx-0 border-2 border-[#FFD700] rounded-2xl overflow-hidden shadow-2xl bg-black">
-   <Image 
-     src="/logo.jpg" 
-     alt="Logo Footer" 
-     fill 
-     className="object-contain p-1" 
-   />
-</div>
+            {/* Logo Footer Kotak Background Maroon */}
+            <div className="relative w-28 h-28 mb-8 mx-auto md:mx-0 border-2 border-[#FFD700] rounded-2xl overflow-hidden shadow-2xl bg-[#800000]">
+              <Image 
+                src="/logo.jpg" 
+                alt="Logo Footer" 
+                fill 
+                className="object-contain p-1" 
+              />
+            </div>
             <h5 className="text-3xl font-black mb-4 text-[#FFD700] tracking-tighter uppercase">DAPUR MAMA UWAIS</h5>
-            <p className="text-gray-400 text-lg max-w-sm italic leading-relaxed">"Rasa bintang lima, harga kaki lima. Asli dari dapur kami untuk keluarga Anda."</p>
+            <p className="text-gray-400 text-lg max-w-sm italic leading-relaxed">
+              "Rasa bintang lima, harga kaki lima. Asli dari dapur kami untuk keluarga Anda."
+            </p>
           </div>
           
           <div className="flex flex-col gap-6 w-full md:w-auto">
@@ -148,6 +155,9 @@ export default function Home() {
               </div>
             </a>
           </div>
+        </div>
+        <div className="text-center mt-12 pt-8 border-t border-white/5 text-gray-600 text-xs tracking-widest">
+           © 2026 DAPUR MAMA UWAIS. DEVELOPED BY KAK ALIF.
         </div>
       </footer>
     </main>

@@ -15,7 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "DAPUR MAMA UWAIS",
   description: "Cita rasa authentic dan nagih",
+  icons: {
+    icon: "/icon.jpg", // Mengambil icon.jpg yang kita taruh di folder src/app/
+    shortcut: "/icon.jpg", // Sebagai cadangan untuk browser lama
+    apple: "/icon.jpg", // Untuk tampilan di perangkat Apple (Home Screen)
+  },
 };
+
 
 export default function RootLayout({
   children,
