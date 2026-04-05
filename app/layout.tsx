@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "DAPUR MAMA UWAIS",
   description: "Cita rasa authentic dan nagih",
+  // Kunci ke logo.png di folder public
   icons: {
-    icon: "/icon.jpg", // Mengambil icon.jpg yang kita taruh di folder src/app/
-    shortcut: "/icon.jpg", // Sebagai cadangan untuk browser lama
-    apple: "/icon.jpg", // Untuk tampilan di perangkat Apple (Home Screen)
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
